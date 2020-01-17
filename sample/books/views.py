@@ -4,6 +4,7 @@ from django.views.generic import ListView
 from django.views.generic import DetailView
 from .models import Book, Author, Publisher
 
+
 # Create your views here.
 class BooksModelView(TemplateView):
     template_name = 'books/index.html'
@@ -13,20 +14,26 @@ class BooksModelView(TemplateView):
         context['model_list'] = ['Book', 'Author', 'Publisher']
         return context
 
+
 class BookList(ListView):
     model = Book
+
 
 class AuthorList(ListView):
     model = Author
 
+
 class PublisherList(ListView):
     model = Publisher
+
 
 class BookDetail(DetailView):
     model = Book
 
+
 class AuthorDetail(DetailView):
     model = Author
+
 
 class PublisherDetail(DetailView):
     model = Publisher
